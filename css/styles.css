@@ -179,8 +179,23 @@
 
     .chat-box { background: var(--ipep-dark); color: #fff; border-radius: 24px; padding: 30px; box-shadow: var(--shadow); }
     .chat-bubble { background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.16); border-radius: 18px; padding: 18px; margin: 16px 0; color: #E7EEF8; }
-    /* Widget ElevenLabs embutido: sobrescreve o position:fixed/inset:0 do :host para ocupar o fluxo do chat-box */
-    .chat-box elevenlabs-convai { position: relative !important; inset: auto !important; display: block; width: 100%; height: 480px; margin: 16px 0; }
+    /* Chat com a IA do Programa */
+    .ai-chat { margin: 16px 0 0; }
+    .ai-chat-messages { height: 340px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 4px 6px 4px 2px; scroll-behavior: smooth; }
+    .ai-chat-messages::-webkit-scrollbar { width: 6px; }
+    .ai-chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,.25); border-radius: 999px; }
+    .ai-msg { max-width: 85%; padding: 12px 16px; border-radius: 16px; font-size: 15px; line-height: 1.55; white-space: pre-wrap; word-wrap: break-word; }
+    .ai-msg.agent { background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.16); color: #E7EEF8; align-self: flex-start; border-bottom-left-radius: 6px; }
+    .ai-msg.user { background: var(--ipep-red); color: #fff; align-self: flex-end; border-bottom-right-radius: 6px; }
+    .ai-chat-typing { display: flex; gap: 5px; padding: 12px 16px 2px; }
+    .ai-chat-typing span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.55); animation: aiTyping 1.2s infinite ease-in-out; }
+    .ai-chat-typing span:nth-child(2) { animation-delay: .18s; }
+    .ai-chat-typing span:nth-child(3) { animation-delay: .36s; }
+    @keyframes aiTyping { 0%, 70%, 100% { transform: translateY(0); opacity: .45; } 35% { transform: translateY(-5px); opacity: 1; } }
+    .ai-chat-form { display: flex; gap: 10px; background: #fff; border-radius: 14px; padding: 10px; margin-top: 14px; }
+    .ai-chat-form input { flex: 1; border: none; outline: none; padding: 12px; font-size: 15px; background: transparent; }
+    .ai-chat-form button { background: var(--ipep-red); color: #fff; border: none; border-radius: 10px; padding: 12px 18px; font-weight: 900; cursor: pointer; }
+    .ai-chat-form button:disabled { opacity: .55; cursor: default; }
 
     .price-card.featured { border: 2px solid rgba(215,25,32,.55); transform: translateY(-8px); }
     .tag { display: inline-block; background: rgba(215,25,32,.08); color: var(--ipep-red); padding: 7px 11px; border-radius: 999px; font-weight: 900; font-size: 13px; margin-bottom: 12px; }

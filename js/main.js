@@ -1,7 +1,9 @@
 function openAIWidget(event) {
     if (event) event.preventDefault();
-    const widget = document.querySelector("elevenlabs-convai") || document.getElementById("ia");
-    if (widget) widget.scrollIntoView({ behavior: "smooth", block: "center" });
+    const section = document.getElementById("ia");
+    if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
+    const input = document.getElementById("aiChatInput");
+    if (input) setTimeout(function () { input.focus({ preventScroll: true }); }, 700);
   }
 
   function submitInterest(event) {

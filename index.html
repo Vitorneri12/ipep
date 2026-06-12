@@ -6,7 +6,7 @@
   <title>Pós-Graduação Executiva em Inteligência Artificial para Negócios | IPEP</title>
   <meta name="description" content="Pós-Graduação Executiva em Inteligência Artificial para Negócios. Formação presencial para líderes, executivos, empresários e gestores." />
 
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 
 <body>
@@ -308,8 +308,16 @@
       </div>
       <div class="chat-box">
         <h3>IA do Programa IPEP</h3>
-        <div class="chat-bubble">Olá! Sou a IA do Programa. Posso explicar como esta pós-graduação pode transformar sua carreira e sua organização.</div>
-        <elevenlabs-convai agent-id="agent_9101kh9ct3aefpht31m5easjef62" variant="full" always-expanded="true" transcript="true" text-input="true"></elevenlabs-convai>
+        <div class="ai-chat">
+          <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="ai-msg agent">Olá! Sou a IA do Programa. Posso explicar como esta pós-graduação pode transformar sua carreira e sua organização. Como posso ajudar?</div>
+          </div>
+          <div class="ai-chat-typing" id="aiChatTyping" hidden><span></span><span></span><span></span></div>
+          <form class="ai-chat-form" id="aiChatForm">
+            <input id="aiChatInput" type="text" placeholder="Digite sua pergunta..." autocomplete="off" maxlength="500" />
+            <button type="submit" id="aiChatSend">Enviar</button>
+          </form>
+        </div>
         <p style="margin-top:18px;">Prefere falar com um especialista?</p>
         <a class="btn btn-red" style="margin-top:12px;" href="https://wa.me/5519978033293" target="_blank" rel="noopener">WhatsApp: +55 19 97803-3293</a>
       </div>
@@ -478,9 +486,9 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=2"></script>
+<script src="js/main.js?v=3"></script>
 
-<!-- Script do widget ElevenLabs ConvAI (o elemento está embutido na seção #ia) -->
-<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<!-- Chat com a IA do Programa (ElevenLabs Agents em modo texto, UI própria) -->
+<script type="module" src="js/ai-chat.js?v=1"></script>
 </body>
 </html>
