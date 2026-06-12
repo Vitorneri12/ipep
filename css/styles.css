@@ -1,4 +1,4 @@
-    :root {
+:root {
       --ipep-blue: #173E7C;
       --ipep-dark: #071B3A;
       --ipep-red: #D71920;
@@ -61,7 +61,7 @@
       min-height: 590px; border-radius: 28px; overflow: hidden; position: relative; box-shadow: var(--shadow);
       background:
         linear-gradient(90deg, rgba(7,27,58,.98) 0%, rgba(7,27,58,.90) 42%, rgba(7,27,58,.18) 78%),
-        url("../assets/img/hero-bg.jpg") center right / cover no-repeat;
+        url("../assets/img/ia-para-tomada-de-decisao-em-negocios.jpg") center right / cover no-repeat;
       color: #fff; padding: 58px 64px; display: flex; align-items: center;
     }
 
@@ -186,6 +186,10 @@
     .price-card.featured { border: 2px solid rgba(215,25,32,.55); transform: translateY(-8px); }
     .tag { display: inline-block; background: rgba(215,25,32,.08); color: var(--ipep-red); padding: 7px 11px; border-radius: 999px; font-weight: 900; font-size: 13px; margin-bottom: 12px; }
     .price { font-size: 38px; font-weight: 950; color: var(--ipep-blue); margin: 10px 0; }
+    .price-card.crossed .price { position: relative; display: inline-block; color: #9AA4B5; }
+    .price-card.crossed .price::before, .price-card.crossed .price::after { content: ""; position: absolute; left: 50%; top: 50%; width: 105%; height: 3.5px; background: var(--ipep-red); border-radius: 2px; pointer-events: none; }
+    .price-card.crossed .price::before { transform: translate(-50%, -50%) rotate(14deg); }
+    .price-card.crossed .price::after { transform: translate(-50%, -50%) rotate(-14deg); }
 
     .form-card { max-width: 760px; margin: auto; }
     .form-card input { width: 100%; padding: 16px; margin-bottom: 14px; border: 1px solid var(--line); border-radius: 11px; font-size: 15px; }
@@ -194,7 +198,7 @@
     .final-cta {
       background:
         linear-gradient(90deg, rgba(7,27,58,.96), rgba(7,27,58,.66)),
-        url("../assets/img/cta-bg.jpg") center / cover no-repeat;
+        url("../assets/img/final-cta-bg.jpg") center / cover no-repeat;
       color: #fff; padding: 92px 0; text-align: center;
     }
 
@@ -224,256 +228,393 @@
       .icon-line { grid-template-columns: 1fr; }
     }
   
-    .fact div {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+    .fact div { display:flex; flex-direction:column; gap:2px; }
+    .fact strong { color:#fff; font-size:15px; line-height:1.15; font-weight:900; }
+    .fact span:not(.fact-icon) { color:#DCEBFF; font-size:14px; line-height:1.2; font-weight:700; }
 
-    .fact strong {
-      display: block;
-      color: #FFFFFF;
-      font-size: 15px;
-      line-height: 1.15;
-      font-weight: 900;
-    }
+    .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
 
-    .fact span:not(.fact-icon) {
-      color: #DCEBFF;
-      font-size: 14px;
-      line-height: 1.2;
-      font-weight: 700;
+    .target-card { border-top:5px solid var(--ipep-blue); }
+    .pre-card { border-top:5px solid var(--ipep-red); }
+
+    .benefit-card {
+      background:#fff; border:1px solid var(--line); border-radius:18px; padding:22px;
+      box-shadow:0 14px 32px rgba(7,27,58,.06);
+    }
+    .benefit-card strong { display:block; color:var(--ipep-blue); font-size:18px; margin-bottom:6px; }
+    .benefit-card span { color:var(--muted); font-size:15px; }
+
+    .partner-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:18px; margin-top:26px; }
+    .partner-card {
+      background:#fff; border:1px solid var(--line); border-radius:18px; padding:22px 18px;
+      text-align:center; box-shadow:0 14px 32px rgba(7,27,58,.06);
+    }
+    .partner-logo {
+      width:64px; height:64px; border-radius:18px; background:#EAF1FA; color:var(--ipep-blue);
+      display:grid; place-items:center; font-weight:950; font-size:19px; margin:0 auto 14px;
+    }
+    .partner-card h3 { color:var(--ipep-blue); font-size:18px; margin-bottom:6px; }
+    .partner-card p { color:var(--muted); font-size:14px; }
+    .partner-note { color:var(--muted); font-size:13px; text-align:center; margin-top:16px; }
+@media (max-width:1060px) {
+      .grid-4,.partner-grid { grid-template-columns:1fr; }
     }
 
   
-    .texan-experience-card {
+    .faculty-highlight {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: -12px 0 34px;
+    }
+
+    .faculty-metric {
       background: #FFFFFF;
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 18px;
-      display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 18px;
-      align-items: center;
-      box-shadow: 0 14px 34px rgba(7,27,58,.07);
-      margin: 18px 0;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 14px 32px rgba(7,27,58,.06);
     }
 
-    .texan-logo-inline {
-      width: 100%;
-      max-width: 170px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .texan-experience-card h3 {
+    .faculty-metric strong {
+      display: block;
       color: var(--ipep-blue);
-      font-size: 20px;
+      font-size: 34px;
+      line-height: 1;
       margin-bottom: 6px;
     }
 
-    .texan-experience-card a,
-    .texan-section a:not(.btn) {
-      color: var(--ipep-blue);
-      font-weight: 900;
+    .faculty-metric span {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
     }
 
-    .texan-section {
-      background: #FFFFFF;
-      padding: 82px 0;
-    }
-
-    .texan-grid {
+    .faculty-grid {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 36px;
-      align-items: center;
-      background: linear-gradient(135deg, #F5F8FC 0%, #FFFFFF 100%);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 38px;
-      box-shadow: 0 18px 44px rgba(7,27,58,.08);
-    }
-
-    .texan-logo-box {
-      background: #FFFFFF;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      padding: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 220px;
-    }
-
-    .texan-logo-box img {
-      width: 100%;
-      max-width: 430px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    @media (max-width: 900px) {
-      .texan-experience-card,
-      .texan-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .texan-logo-inline {
-        max-width: 220px;
-      }
-    }
-
-  
-    /* --- SEÇÃO TEXANGROUP REORGANIZADA --- */
-    .texan-meetings-section {
-      overflow: hidden;
-    }
-
-    .texan-meetings-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
-      gap: 34px;
-      align-items: center;
-    }
-
-    .texan-meetings-image {
-      background: #071B3A;
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(7, 27, 58, .10);
-    }
-
-    .texan-meetings-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-      background: #071B3A;
-    }
-
-    .texan-meetings-content {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 30px;
-      box-shadow: 0 18px 44px rgba(7,27,58,.08);
-    }
-
-    .texan-logo-card-clean {
-      display: grid;
-      grid-template-columns: 150px 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 22px;
-      align-items: center;
-      background: linear-gradient(135deg, #F5F8FC 0%, #FFFFFF 100%);
+    }
+
+    .faculty-card {
+      background: #FFFFFF;
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 20px;
-      margin-bottom: 20px;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 16px 36px rgba(7,27,58,.06);
+      position: relative;
+      overflow: hidden;
     }
 
-    .texan-logo-card-clean img {
-      width: 100%;
-      max-width: 150px;
-      height: auto;
-      object-fit: contain;
+    .faculty-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--ipep-blue), #2F80ED, var(--ipep-red));
     }
 
-    .texan-logo-card-clean h3 {
+    .faculty-card.coordinator {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F5F8FC 100%);
+      border: 2px solid rgba(23,62,124,.18);
+    }
+
+    .faculty-card h3 {
       color: var(--ipep-blue);
-      font-size: 22px;
-      line-height: 1.25;
-      margin-bottom: 8px;
+      font-size: 24px;
+      margin-bottom: 12px;
     }
 
-    .texan-logo-card-clean p {
+    .faculty-card p {
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.55;
-      margin: 0;
-    }
-
-    .texan-logo-card-clean a {
-      color: var(--ipep-blue);
-      font-weight: 900;
-    }
-
-    .texan-intro {
-      color: var(--muted);
-      font-size: 17px;
       line-height: 1.65;
-      margin: 0 0 20px;
     }
 
-    .meeting-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin: 18px 0;
-    }
-
-    .meeting-feature {
-      background: #F7FAFE;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-    }
-
-    .meeting-feature strong {
-      display: block;
+    .faculty-tag {
+      display: inline-block;
+      background: rgba(23,62,124,.08);
       color: var(--ipep-blue);
-      font-size: 15px;
-      margin-bottom: 5px;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
-    .meeting-feature span {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
+    .guest-title {
+      margin-top: 58px;
+      margin-bottom: 30px;
     }
 
-    .important-note {
-      background: #071B3A;
-      color: #E7EEF8;
-      border-radius: 16px;
-      padding: 16px 18px;
-      font-size: 15px;
-      line-height: 1.55;
-      margin-top: 16px;
+    .guest-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    .important-note strong {
-      color: #FFFFFF;
+    .faculty-card.guest::before {
+      background: linear-gradient(90deg, var(--ipep-red), #2F80ED);
     }
 
     @media (max-width: 1060px) {
-      .texan-meetings-grid {
+      .faculty-highlight,
+      .faculty-grid,
+      .guest-grid {
         grid-template-columns: 1fr;
       }
 
-      .texan-meetings-content {
-        padding: 24px;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .texan-logo-card-clean {
-        grid-template-columns: 1fr;
-        text-align: left;
-      }
-
-      .texan-logo-card-clean img {
-        max-width: 210px;
-      }
-
-      .meeting-features {
-        grid-template-columns: 1fr;
-      }
-
-      .texan-meetings-content {
-        padding: 20px;
+      .faculty-card.coordinator {
+        grid-column: auto;
       }
     }
 
   
+    /* --- CORPO DOCENTE INTERATIVO DEFINITIVO --- */
+    .docentes-clean-title {
+      margin-bottom: 34px;
+    }
+
+    .docentes-clean-title h2 {
+      font-size: clamp(30px, 4vw, 42px);
+    }
+
+    .docentes-clean-title p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 17px;
+    }
+
+    .faculty-interactive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .faculty-interactive-grid.guest {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .teacher-card {
+      position: relative;
+      min-height: 250px;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      text-align: left;
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(7,27,58,.06);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      color: var(--text);
+      appearance: none;
+      font: inherit;
+    }
+
+    .teacher-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--ipep-blue), #2F80ED, var(--ipep-red));
+    }
+
+    .teacher-card:hover,
+    .teacher-card:focus,
+    .teacher-card.active {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 54px rgba(7,27,58,.14);
+      border-color: rgba(23,62,124,.28);
+      outline: none;
+    }
+
+    .teacher-role {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .role-coordinator { background: rgba(7,27,58,.10); color: var(--ipep-dark); }
+    .role-phd { background: rgba(179,132,0,.14); color: #8A5A00; }
+    .role-doctoral { background: rgba(23,62,124,.10); color: var(--ipep-blue); }
+    .role-master { background: rgba(215,25,32,.09); color: var(--ipep-red); }
+    .role-guest { background: rgba(15,23,42,.08); color: #334155; }
+
+    .teacher-card strong {
+      display: block;
+      color: var(--ipep-blue);
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .teacher-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .teacher-bio {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(7,27,58,.98), rgba(23,62,124,.97));
+      color: #FFFFFF;
+      padding: 28px;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .25s ease, transform .25s ease;
+      overflow-y: auto;
+      font-size: 15px;
+      line-height: 1.62;
+      border-radius: 22px;
+      z-index: 5;
+    }
+
+    .teacher-bio h3 {
+      color: #FFFFFF;
+      font-size: 21px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .teacher-bio span {
+      display: inline-block;
+      color: #DCEBFF;
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .teacher-bio p {
+      color: #E7EEF8;
+      margin: 0;
+    }
+
+    .teacher-card:hover .teacher-bio,
+    .teacher-card:focus .teacher-bio,
+    .teacher-card.active .teacher-bio {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .guest-title {
+      margin-top: 58px;
+      margin-bottom: 30px;
+    }
+
+    .guest-card::before {
+      background: linear-gradient(90deg, var(--ipep-red), #2F80ED);
+    }
+
+    @media (max-width: 1060px) {
+      .faculty-interactive-grid,
+      .faculty-interactive-grid.guest {
+        grid-template-columns: 1fr;
+        max-width: none;
+      }
+
+      .teacher-card {
+        min-height: 230px;
+      }
+    }
+
+  
+    /* --- SEÇÃO TECNOLOGIAS LÍDERES --- */
+    .technologies-section {
+      background: #F5F8FC;
+    }
+
+    .technology-visual-card {
+      max-width: 1120px;
+      margin: 0 auto 28px;
+      background: #071B3A;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 26px 70px rgba(7,27,58,.18);
+      border: 1px solid rgba(7,27,58,.10);
+    }
+
+    .technology-visual-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background: #071B3A;
+    }
+
+    .technology-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .technology-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 14px 32px rgba(7,27,58,.06);
+    }
+
+    .technology-card strong {
+      display: block;
+      color: var(--ipep-blue);
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .technology-card span {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1060px) {
+      .technology-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  
+    /* --- X VERMELHO SOBRE O VALOR OFICIAL --- */
+    .official-price-x .old-price {
+      position: relative;
+      display: inline-block;
+      padding: 6px 14px;
+      line-height: 1.05;
+    }
+
+    .official-price-x .old-price::before,
+    .official-price-x .old-price::after {
+      content: "";
+      position: absolute;
+      left: 4%;
+      top: 50%;
+      width: 92%;
+      height: 3px;
+      background: #D71920;
+      border-radius: 999px;
+      transform-origin: center;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .official-price-x .old-price::before {
+      transform: rotate(16deg);
+    }
+
+    .official-price-x .old-price::after {
+      transform: rotate(-16deg);
+    }

@@ -1,4 +1,4 @@
-  function simulateAI() {
+function simulateAI() {
     const question = document.getElementById("aiQuestion").value.trim();
     const responseBox = document.getElementById("aiResponse");
     if (!question) {
@@ -21,3 +21,22 @@
     document.getElementById("formMessage").style.display = "block";
     setTimeout(function() { window.open("https://wa.me/5519978033293?text=" + message, "_blank"); }, 650);
   }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const teacherCards = document.querySelectorAll(".teacher-card");
+
+    teacherCards.forEach(function(card) {
+      card.addEventListener("click", function(event) {
+        const isActive = card.classList.contains("active");
+        teacherCards.forEach(function(c) { c.classList.remove("active"); });
+        if (!isActive) card.classList.add("active");
+        event.stopPropagation();
+      });
+    });
+
+    document.addEventListener("click", function(event) {
+      if (!event.target.closest(".teacher-card")) {
+        teacherCards.forEach(function(c) { c.classList.remove("active"); });
+      }
+    });
+  });

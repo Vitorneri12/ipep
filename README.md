@@ -15,9 +15,7 @@ ipep/
     └── img/            # Imagens (logos, fotos, backgrounds)
 ```
 
-Originalmente todo o site era um único `index.html` de ~3 MB com CSS, JS e
-imagens embutidas em base64. O código foi reorganizado em arquivos separados e
-as imagens extraídas para `assets/img/`, reduzindo o HTML para ~14 KB.
+Originalmente todo o site era um único `index.html` de ~7 MB com CSS, JS e imagens embutidas em base64. O código foi reorganizado em arquivos separados e as imagens extraídas para `assets/img/`, reduzindo o HTML para ~28 KB.
 
 ## Como rodar localmente
 
@@ -33,3 +31,4 @@ python3 -m http.server 8000
 
 - Central de Matrículas: 0800 7 712 712
 - Informações: (19) 3737-3270
+- Campinas – SP — R. José de Alencar, 442, Centro
