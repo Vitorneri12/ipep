@@ -1,13 +1,7 @@
-function simulateAI() {
-    const question = document.getElementById("aiQuestion").value.trim();
-    const responseBox = document.getElementById("aiResponse");
-    if (!question) {
-      responseBox.style.display = "block";
-      responseBox.innerHTML = "Digite sua dúvida para que a IA do Programa possa orientar você.";
-      return;
-    }
-    responseBox.style.display = "block";
-    responseBox.innerHTML = "Excelente pergunta. Esta pós foi criada para profissionais que desejam aplicar Inteligência Artificial de forma estratégica nos negócios, sem necessidade de formação técnica em programação. O programa trabalha visão executiva, governança, dados, aplicações práticas e projeto aplicado. Para orientação personalizada, preencha o formulário ou fale com um especialista pelo WhatsApp.";
+function openAIWidget(event) {
+    if (event) event.preventDefault();
+    const widget = document.querySelector("elevenlabs-convai") || document.getElementById("ia");
+    if (widget) widget.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   function submitInterest(event) {
